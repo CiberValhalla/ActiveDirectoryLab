@@ -1,2 +1,4 @@
 # ActiveDirectoryLab
-ActiveDirectoryLab resources
+Some scrits to quick deploy an ActiveDirectory Lab
+
+For more info: https://cibervalhalla.com/
