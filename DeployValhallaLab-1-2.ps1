@@ -36,6 +36,8 @@ catch {
 Write-Host " [+] Changing adapter conf..."
 try {
     New-NetIPAddress –IPAddress $dcaddress -DefaultGateway $dcgateway -PrefixLength $dcmask -InterfaceIndex (Get-NetAdapter).InterfaceIndex
+    Set-DNSClientServerAddress –InterfaceIndex (Get-NetAdapter).InterfaceIndex –ServerAddresses 127.0.0.1
+    Set-DNSClientServerAddress –InterfaceIndex (Get-NetAdapter).InterfaceIndex –ServerAddresses $natdns
     Write-Host " [+] Adapter conf changed "
 } 
 catch {
